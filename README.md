@@ -42,7 +42,7 @@ Después de instalar las dependencias, puedes ejecutar la API:
 
 ```powershell
 # Ejecuta la aplicación
-python app.py
+python main.py
 ```
 
 Deberías ver una salida similar a:
