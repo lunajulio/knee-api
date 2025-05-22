@@ -28,7 +28,6 @@ def preprocess_knee_image(image_path):
     return equalized_rgb
 
 @app.route('/predict', methods=['POST'])
-@app.route('/predict', methods=['POST'])
 def predict():
     # Depuración detallada
     print("=== NUEVA SOLICITUD RECIBIDA ===")
