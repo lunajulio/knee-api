@@ -1,0 +1,53 @@
+# Entornos virtuales
+.venv_new/
+venv/
+env/
+ENV/
+.env/
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos de configuración local
+.env
+.flaskenv
+instance/
+.webassets-cache
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+.directory
+
+# Archivos de IDEs y editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.pydevproject
+.settings/
+
+# Archivos de dependencias
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Archivos temporales
+.tmp/
+.temp/
+temp/
+tmp/
+
+# Archivos de construcción y distribución
+dist/
+build/
+*.egg-info/
