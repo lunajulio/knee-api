@@ -4,8 +4,10 @@ import numpy as np
 import os
 from tensorflow.keras.models import load_model
 import tempfile
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Habilitar CORS para todas las rutas
 
 # Cargar el modelo al iniciar la aplicación
 MODEL_PATH = 'model_mobilenetv2_binary_final.h5'
@@ -62,6 +64,9 @@ def predict():
             
             # Eliminar el archivo temporal
             os.unlink(temp.name)
+
+            # Depuración de la predicción
+            print(f"Predicción: {pred_label}, Confianza: {pred[0][0]}")
             
             # Devolver el resultado
             return jsonify({
