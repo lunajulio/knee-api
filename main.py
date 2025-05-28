@@ -98,33 +98,9 @@ def predict():
         'content_type': request.content_type
     }), 400
 
-# Agregar una ruta para la página principal con un formulario HTML
-@app.route('/', methods=['GET'])
-def index():
-    return '''
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Predicción de Imágenes de Rodilla</title>
-        <style>
-            body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-            .form-container { margin-top: 20px; }
-            button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        </style>
-    </head>
-    <body>
-        <h1>Análisis de Imágenes de Rodilla</h1>
-        <p>Sube una imagen para clasificarla como positiva o negativa.</p>
-        
-        <div class="form-container">
-            <form action="/predict" method="post" enctype="multipart/form-data">
-                <input type="file" name="image" accept="image/*" required>
-                <button type="submit">Predecir</button>
-            </form>
-        </div>
-    </body>
-    </html>
-    '''
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "ok"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
